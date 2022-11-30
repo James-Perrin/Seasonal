@@ -1,0 +1,27 @@
+<mat-toolbar color="white">
+  <img src="../../assets/logo.png" height="35" width="35"/>
+  <span style="margin-left: 20px;">Seasonal</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div>
+  <mat-form-field class="example-form-field" style="margin-left: 35px; margin-top: 5px;">
+    <mat-label>Location</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [constructorType]="chartConstructor"
+    [options]="chartOptions"
+    style="width: 100%; display: block;"
+  ></highcharts-chart>
+  
+</div>
+
